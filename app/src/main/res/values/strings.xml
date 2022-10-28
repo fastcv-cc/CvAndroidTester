@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CvAndroidTester</string>
+    <string name="app_name">功能测试仪</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -10,4 +10,5 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="splash_simple_work">让工作更加简单！</string>
 </resources>

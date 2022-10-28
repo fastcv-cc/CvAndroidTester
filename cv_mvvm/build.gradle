@@ -27,6 +27,9 @@ android {
     kotlinOptions {
         jvmTarget = rootProject.ext.kotlinOptions
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -40,7 +43,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.dependencies.espresso_core}"
 
     //viewmodle
-    implementation "androidx.activity:activity-ktx:1.4.0"
-    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    api "androidx.activity:activity-ktx:1.4.0"
+    api "androidx.fragment:fragment-ktx:1.4.1"
     api 'androidx.databinding:databinding-runtime:7.1.2'
 }

@@ -18,6 +18,8 @@ abstract class BaseMvvmActivity<VM : BaseViewModel, DB : ViewDataBinding> : CvAc
         protected const val ACTIVITY_ANIM_DURATION = 230L
     }
 
+    /** 当前界面 布局文件的 资源ID */
+    abstract val layoutResID: Int
 
     /** 当前界面 ViewModel 对象 */
     abstract val viewModel: VM
@@ -28,21 +30,6 @@ abstract class BaseMvvmActivity<VM : BaseViewModel, DB : ViewDataBinding> : CvAc
     override fun onCreate(savedInstanceState: Bundle?) {
         beforeOnCreate()
         super.onCreate(savedInstanceState)
-    }
-
-    /** [onCreate] 之前执行，可用于配置动画 */
-    protected open fun beforeOnCreate() {
-        window.run {
-            enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true).apply {
-                duration = ACTIVITY_ANIM_DURATION
-            }
-            exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, false).apply {
-                duration = ACTIVITY_ANIM_DURATION
-            }
-        }
-    }
-
-    override fun setContentView(layoutResID: Int) {
         // 初始化 DataBinding
         mBinding = DataBindingUtil.inflate(
             LayoutInflater.from(this),
@@ -55,6 +42,18 @@ abstract class BaseMvvmActivity<VM : BaseViewModel, DB : ViewDataBinding> : CvAc
         // 设置布局
         super.setContentView(mBinding.root)
         setObServer()
+    }
+
+    /** [onCreate] 之前执行，可用于配置动画 */
+    protected open fun beforeOnCreate() {
+        window.run {
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true).apply {
+                duration = ACTIVITY_ANIM_DURATION
+            }
+            exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, false).apply {
+                duration = ACTIVITY_ANIM_DURATION
+            }
+        }
     }
 
     private fun setObServer() {

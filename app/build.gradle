@@ -30,7 +30,7 @@ android {
         jvmTarget = rootProject.ext.kotlinOptions
     }
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
@@ -51,5 +51,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.dependencies.lifecycle_viewmodel_ktx}"
     implementation "androidx.navigation:navigation-fragment-ktx:${rootProject.ext.dependencies.navigation_fragment_ktx}"
     implementation "androidx.navigation:navigation-ui-ktx:${rootProject.ext.dependencies.navigation_ui_ktx}"
+
+    implementation "androidx.core:core-splashscreen:1.0.0-alpha02"
 
 }

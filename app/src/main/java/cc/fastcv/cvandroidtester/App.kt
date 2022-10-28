@@ -6,4 +6,9 @@ class App : CvApp() {
     override fun isDebug(): Boolean {
         return BuildConfig.DEBUG
     }
+
+    override fun onCreate() {
+        super.onCreate()
+
+    }
 }
