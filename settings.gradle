@@ -1,0 +1,9 @@
+rootProject.name = "CvAndroidTester"
+include ':app'
+include ':cv_base'
+include ':cv_net'
+include ':cv_log'
+include ':cv_tools'
+include ':cv_image'
+include ':cv_aider'
+include ':cv_mvvm'

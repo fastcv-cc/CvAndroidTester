@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk rootProject.ext.androidVersion.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.ext.androidVersion.minSdk
+        targetSdk rootProject.ext.androidVersion.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility  rootProject.ext.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.kotlinOptions
+    }
+    //
+    kapt {
+        arguments {
+            //根据模块名来命名路由根节点
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:${rootProject.ext.dependencies.core_ktx}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.dependencies.appcompat}"
+    implementation "com.google.android.material:material:${rootProject.ext.dependencies.material}"
+
+    testImplementation "junit:junit:${rootProject.ext.dependencies.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${rootProject.ext.dependencies.extjunit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.dependencies.espresso_core}"
+
+    api "com.geyifeng.immersionbar:immersionbar:${rootProject.ext.dependencies.immersionbar}"
+    debugApi "com.squareup.leakcanary:leakcanary-android:${rootProject.ext.dependencies.leakcanary_android}"
+    api "com.github.JessYanCoding:AndroidAutoSize:${rootProject.ext.dependencies.AndroidAutoSize}"
+
+    implementation "com.alibaba:arouter-api:${rootProject.ext.dependencies.arouter_api}"
+    kapt "com.alibaba:arouter-compiler:${rootProject.ext.dependencies.arouter_compiler}"
+}
