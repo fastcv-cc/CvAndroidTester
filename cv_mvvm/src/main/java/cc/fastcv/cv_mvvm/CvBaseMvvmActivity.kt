@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-abstract class BaseMvvmActivity<VM : BaseViewModel, DB : ViewDataBinding> : CvActivity() {
+abstract class CvBaseMvvmActivity<VM : CvBaseViewModel, DB : ViewDataBinding> : CvActivity() {
 
     companion object {
         /** Activity 界面跳转动画时长 ms */

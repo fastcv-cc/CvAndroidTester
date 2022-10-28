@@ -10,9 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/Theme.CvAndroidTester">
         <activity
-            android:name=".SplashActivity"
+            android:name=".SplashActivityCv"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

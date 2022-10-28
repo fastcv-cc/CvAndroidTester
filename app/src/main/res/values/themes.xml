@@ -1,9 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.SplashScreen" parent="Theme.SplashScreen" tools:ignore="ResourceCycle">
-    </style>
-
-    <style name="Theme.CvAndroidTester" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.CvAndroidTester" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowSplashScreenBackground">@color/splash_red</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -16,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed">false</item>
     </style>
 
     <style name="Theme.CvAndroidTester.NoActionBar">

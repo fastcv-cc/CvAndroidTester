@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 
-open class BaseViewModel : ViewModel() {
+open class CvBaseViewModel : ViewModel() {
 
     /**
      * 是否关闭Activity

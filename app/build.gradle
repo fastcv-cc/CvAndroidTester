@@ -1,6 +1,7 @@
 plugins {
     id "com.android.application"
     id "org.jetbrains.kotlin.android"
+    id 'kotlin-kapt'
 }
 
 android {
@@ -32,6 +33,12 @@ android {
     buildFeatures {
         dataBinding true
     }
+    kapt {
+        arguments {
+            //根据模块名来命名路由根节点
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
 }
 
 dependencies {
@@ -53,5 +60,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:${rootProject.ext.dependencies.navigation_ui_ktx}"
 
     implementation "androidx.core:core-splashscreen:1.0.0-alpha02"
+
+    implementation "com.alibaba:arouter-api:${rootProject.ext.dependencies.arouter_api}"
+    kapt "com.alibaba:arouter-compiler:${rootProject.ext.dependencies.arouter_compiler}"
 
 }

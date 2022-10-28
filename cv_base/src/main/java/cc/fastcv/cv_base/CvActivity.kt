@@ -45,7 +45,7 @@ open class CvActivity : AppCompatActivity(), CvReceiverCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ImmersionBar.with(this).transparentNavigationBar().statusBarDarkFont(statusBarIconIsDark())
+        ImmersionBar.with(this).transparentStatusBar().transparentNavigationBar().statusBarDarkFont(statusBarIconIsDark())
             .navigationBarDarkIcon(navigationBarIconIsDark()).init()
         compatFix()
 
