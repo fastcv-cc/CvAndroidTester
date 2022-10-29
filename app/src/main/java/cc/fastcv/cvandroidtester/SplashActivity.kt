@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 @SuppressLint("CustomSplashScreen")
 @Route(path = "/app/SplashActivity")
-class SplashActivityCv : CvBaseMvvmActivity<CvBaseViewModel,ActivitySplashBinding>() {
+class SplashActivity : CvBaseMvvmActivity<CvBaseViewModel, ActivitySplashBinding>() {
 
     companion object {
         private const val TAG = "SplashActivity"
@@ -57,7 +57,7 @@ class SplashActivityCv : CvBaseMvvmActivity<CvBaseViewModel,ActivitySplashBindin
                 delay(2000)
                 Log.d(TAG, "onCreate: finish!!!")
                 withContext(Dispatchers.Main) {
-                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                    ARouter.getInstance().build("/app/MainActivity").navigation()
                 }
             }
         }

@@ -13,7 +13,7 @@
         android:name=".App"
         android:theme="@style/Theme.CvAndroidTester">
         <activity
-            android:name=".SplashActivityCv"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
