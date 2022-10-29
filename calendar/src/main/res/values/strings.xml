@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Calendar</string>
+    <string name="request_calendar_permission">申请操作日历权限</string>
+    <string name="calendar_title">本地日历操作</string>
+</resources>
